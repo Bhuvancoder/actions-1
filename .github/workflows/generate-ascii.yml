@@ -22,5 +22,5 @@ jobs:
           run: cat tux.txt
 
         - name: List repo files
-          run: ls-ltra
+          run: ls -ltra
 
