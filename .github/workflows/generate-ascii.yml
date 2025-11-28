@@ -14,12 +14,12 @@ jobs:
           run: sudo apt install cowsay -y 
 
         - name: Execute cowsay command
-          run: cowsay -f Lion "run for a cover..I am a Lion...Roar" >> lion.txt
+          run: cowsay -f tux "run for a cover..I am a tux...Roar" >> tux.txt
 
         - name: Test file exists
-          run:  grep -i "Lion" lion.txt
+          run:  grep -i "tux" tux.txt
         - name: read file
-          run: cat lion.txt
+          run: cat tux.txt
 
         - name: List repo files
           run: ls-ltra

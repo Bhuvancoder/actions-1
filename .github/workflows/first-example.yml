@@ -15,8 +15,8 @@ jobs:
                echo "My first github workflow"
                ls -ltra
                cat README.md 
-        - name: Generate ASCII Artworks
-          run: cowsay -f Lion "run for a cover..I am a Lion...Roar" >> lion.txt
+        # - name: Generate ASCII Artworks
+        #   run: cowsay -f Lion "run for a cover..I am a Lion...Roar" >> lion.txt
         
         # - name: List Files
         #   run: ls -a
