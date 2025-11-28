@@ -1,0 +1,26 @@
+name: Genrate ASCII Artwork
+
+on: 
+   push 
+
+jobs:
+    ascii_job:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repo
+          uses: actions/checkout@v4
+        
+        - name: Install Cowsay Program
+          run: sudo apt install cowsay -y 
+
+        - name: Execute cowsay command
+          run: cowsay -f Lion "run for a cover..I am a Lion...Roar" >> lion.txt
+
+        - name: Test file exists
+          run:  grep -i "Lion" lion.txt
+        - name: read file
+          run: cat lion.txt
+
+        - name: List repo files
+          run: ls-ltra
+
