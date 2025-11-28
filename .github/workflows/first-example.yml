@@ -10,10 +10,15 @@ jobs:
         - name: Checkout repository
           uses: actions/checkout@v4
 
-        - name: Welcome Message
-          run: echo "My first github workflow"
-
-        - name: List Files
-          run: ls -a
-        - name: Readme fiels
-          run: cat README.md
+        - name: List and Read Files
+          run: |
+               echo "My first github workflow"
+               ls -ltra
+               cat README.md 
+        - name: Generate ASCII Artworks
+          run: cowsay -f Lion "run for a cover..I am a Lion...Roar" >> lion.txt
+        
+        # - name: List Files
+        #   run: ls -a
+        # - name: Readme fiels
+        #   run: cat README.md
