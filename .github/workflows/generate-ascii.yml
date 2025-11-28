@@ -1,7 +1,8 @@
 name: Genrate ASCII Artwork
 
 on: 
-   push 
+   push:
+   workflow_dispatch:
 
 jobs:
     ascii_job:
