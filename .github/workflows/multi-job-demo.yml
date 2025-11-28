@@ -15,13 +15,13 @@ jobs:
           run: cowsay -f tux "run for a cover..I am a tux...Roar" >> tux.txt
         
         - name: Sleep for 30 seconds
-          run: Sleep 30
+          run: sleep 30
 
     test_job_2:
         runs-on: ubuntu-latest
         steps: 
         - name: Sleep for 10 seconds
-          run: Sleep 10
+          run: sleep 10
 
         - name: Test file exists
           run: grep -i "tux" tux.txt
