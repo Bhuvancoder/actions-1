@@ -15,7 +15,7 @@ jobs:
           run: cowsay -f tux "run for a cover..I am a tux...Roar" >> tux.txt
         
         - name: Upload tux file
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: Tux-file
             path: tux.txt
@@ -25,7 +25,7 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
         - name: Download tux file
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
           with:
             name: Tux-file
 
@@ -37,10 +37,10 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Download tux file
-          uses: actions/download-artifact@v3
+          uses: actions/download-artifact@v4
           with:
             name: Tux-file
-            
+
         - name: Read the file
           run: cat tux.txt
 
