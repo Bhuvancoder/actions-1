@@ -14,15 +14,20 @@ jobs:
         - name: Execute cowsay CMD
           run: cowsay -f tux "run for a cover..I am a tux...Roar" >> tux.txt
         
-        - name: Sleep for 30 seconds
-          run: sleep 30
+        - name: Upload tux file
+          uses: actions/upload-artifact@v3
+          with:
+            name: Tux-file
+            path: tux.txt
 
     test_job_2:
         needs: build_job_1
         runs-on: ubuntu-latest
         steps: 
-        - name: Sleep for 10 seconds
-          run: sleep 10
+        - name: Download tux file
+          uses: actions/download-artifact@v3
+          with:
+            name: Tux-file
 
         - name: Test file exists
           run: grep -i "tux" tux.txt
@@ -31,6 +36,11 @@ jobs:
         needs: test_job_2
         runs-on: ubuntu-latest
         steps:
+        - name: Download tux file
+          uses: actions/download-artifact@v3
+          with:
+            name: Tux-file
+            
         - name: Read the file
           run: cat tux.txt
 
