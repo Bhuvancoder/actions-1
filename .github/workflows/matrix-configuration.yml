@@ -5,9 +5,9 @@ on:
 
 jobs:
     deploy:
-        concurrency:
-            group: deploy-${{ github.ref }}
-            cancel-in-progress: true
+        # concurrency:
+        #     group: deploy-${{ github.ref }}
+        #     cancel-in-progress: true
         strategy:
             matrix:
                 os: [ubuntu-latest, ubuntu-20.04, windows-latest]
